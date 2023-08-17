@@ -1,0 +1,16 @@
+name: Test github workspace value
+
+on: push
+
+jobs:
+  with-checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Print workspace path
+        run: echo $GITHUB_WORKSPACE
+  without-checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print workspace path
+        run: echo $GITHUB_WORKSPACE 
